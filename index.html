@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+<title>牙了个牙</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div id="stage">
+  <div id="hud">
+    <span id="hudLevel">第 1 关</span>
+    <span id="hudLeft"></span>
+    <button id="muteBtn">🔊</button>
+  </div>
+  <div id="board"></div>
+  <div id="bar"></div>
+  <div id="tools">
+    <button class="toolBtn" id="toolUndo">↩️ 撤销<span class="cnt"></span></button>
+    <button class="toolBtn" id="toolShuffle">🔀 洗牌<span class="cnt"></span></button>
+    <button class="toolBtn" id="toolOut">📤 移出<span class="cnt"></span></button>
+    <button class="toolBtn" id="toolQuiz">🎬 学知识<span class="cnt"></span></button>
+  </div>
+</div>
+
+<div id="startScreen" class="overlay">
+  <div class="panel">
+    <div class="titleEmoji">🦷</div>
+    <h1>牙了个牙</h1>
+    <p class="subtitle">点击最上层的方块，放进下面的槽里，<br>凑齐 3 个相同的就能消除！<br>全部消完就过关～</p>
+    <button id="startBtn" class="bigBtn">开始游戏</button>
+    <p class="hint" id="progressHint"></p>
+  </div>
+</div>
+
+<div id="endScreen" class="overlay hidden">
+  <div class="panel">
+    <div id="endEmoji" class="titleEmoji"></div>
+    <h1 id="endTitle"></h1>
+    <div id="endTip" class="tipBox"></div>
+    <button id="reviveBtn" class="bigBtn gold hidden">🎬 看视频答题复活</button>
+    <p style="height:10px"></p>
+    <button id="endBtn" class="bigBtn"></button>
+  </div>
+</div>
+
+<!-- 科普视频答题界面 -->
+<div id="quizScreen" class="overlay hidden">
+  <div class="panel">
+    <h2>🎬 护牙小课堂</h2>
+    <p class="subtitle">看完视频答对题目，就能赢得 <b id="quizPrize"></b>！</p>
+    <div id="videoBox"></div>
+    <div id="quizBody" class="hidden">
+      <p id="quizQ" class="quizQ"></p>
+      <div id="quizOpts"></div>
+      <div id="quizFb" class="tipBox hidden"></div>
+      <button id="quizNextBtn" class="bigBtn hidden"></button>
+    </div>
+    <button id="quizCancelBtn" class="linkBtn">先不看了</button>
+  </div>
+</div>
+
+<script src="game.js"></script>
+</body>
+</html>
